@@ -131,8 +131,12 @@ export default async function StandardPage({ params }: Props) {
 
 			{/* ===== HERO ===== */}
 			<section className="relative overflow-hidden">
-				<div className="absolute top-0 right-0 w-[65%] h-[380px] pointer-events-none select-none z-0">
-					<StandardBgIllustration slug={slug} number={entry.nfrsNumber} name={entry.title} />
+				<div className="absolute inset-0 pointer-events-none">
+					<div className="max-w-[1280px] mx-auto h-full">
+						<div className="absolute top-0 right-[max(0px,calc((100vw-1280px)/2*-1))] w-[65%] h-[380px] pointer-events-none select-none z-0 max-md:hidden">
+							<StandardBgIllustration slug={slug} number={entry.nfrsNumber} name={entry.title} />
+						</div>
+					</div>
 				</div>
 				<div
 					className="absolute inset-0 pointer-events-none"
