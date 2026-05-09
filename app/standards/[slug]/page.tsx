@@ -312,8 +312,8 @@ export default async function StandardPage({ params }: Props) {
 							</div>
 						</article>
 
-						{/* Right sidebar — independently scrollable */}
-						<aside className="hidden lg:flex flex-col gap-6 sticky top-24 self-start max-h-[calc(100vh-7rem)] overflow-y-auto pr-1 scrollbar-thin">
+						{/* Right sidebar */}
+						<aside className="hidden lg:flex flex-col gap-6 sticky top-24">
 							{/* Difficulty selector */}
 							<GlassCard padding="sm" className="shadow-clay-sm">
 								<DifficultySelector />
