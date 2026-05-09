@@ -203,7 +203,7 @@ export default async function StandardPage({ params }: Props) {
 					<div className="grid grid-cols-1 lg:grid-cols-[220px_1fr_280px] gap-8 lg:gap-10">
 
 						{/* Left sidebar — ProgressTOC */}
-						<div className="hidden lg:block sticky top-24 self-start">
+						<div className="hidden lg:block sticky top-24">
 							<GlassCard padding="sm" className="shadow-clay-sm">
 								<ProgressTOC items={tocItems} storageKey={slug} />
 							</GlassCard>
@@ -314,7 +314,7 @@ export default async function StandardPage({ params }: Props) {
 						</article>
 
 						{/* Right sidebar */}
-						<div className="hidden lg:block sticky top-24 self-start">
+						<div className="hidden lg:block sticky top-24">
 							<DifficultySelector />
 
 							{pageData && (
