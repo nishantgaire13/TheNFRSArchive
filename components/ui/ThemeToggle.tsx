@@ -20,8 +20,10 @@ function applyTheme(mode: ThemeMode) {
 
 export function ThemeToggle({ className = "" }: ThemeToggleProps) {
 	const [mode, setMode] = useState<ThemeMode>("system");
+	const [mounted, setMounted] = useState(false);
 
 	useEffect(() => {
+		setMounted(true);
 		const stored = localStorage.getItem("theme") as ThemeMode | null;
 		if (stored && stored !== "system") {
 			setMode(stored);
@@ -85,7 +87,7 @@ export function ThemeToggle({ className = "" }: ThemeToggleProps) {
 			aria-label={`Theme: ${mode}. Click to change.`}
 			title={`Theme: ${mode}`}
 		>
-			{icons[mode]}
+			{mounted ? icons[mode] : <div className="w-[18px] h-[18px]" />}
 		</button>
 	);
 }
