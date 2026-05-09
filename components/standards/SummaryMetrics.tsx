@@ -9,11 +9,11 @@ export function SummaryMetrics({ data }: { data: DifferencesData }) {
 	];
 
 	return (
-		<div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
+		<div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-8 min-w-0">
 			{metrics.map((m) => (
 				<div
 					key={m.label}
-					className="rounded-lg border border-border px-4 py-3 text-center"
+					className="rounded-lg border border-border px-4 py-3 text-center min-w-0"
 					style={{ background: "var(--glass-bg)", backdropFilter: "var(--glass-backdrop)" }}
 				>
 					<p className="font-sans text-[10px] uppercase tracking-[0.1em] text-text-subtle mb-1">{m.label}</p>

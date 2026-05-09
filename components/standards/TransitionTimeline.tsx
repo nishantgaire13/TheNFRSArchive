@@ -4,9 +4,9 @@ export function TransitionTimeline({ events }: { events: TimelineEvent[] }) {
 	return (
 		<div className="mb-8">
 			<p className="font-sans text-xs uppercase tracking-[0.1em] text-text-subtle font-medium mb-4">Transition Timeline</p>
-			<div className="relative flex items-start justify-between gap-2 px-2">
+			<div className="relative flex items-start justify-between gap-2 px-2 min-w-0">
 				{/* Connecting line */}
-				<div className="absolute top-3 left-6 right-6 h-0.5 bg-border" />
+				<div className="absolute top-3 left-6 right-6 h-0.5 bg-border min-w-0" />
 
 				{events.map((e, i) => {
 					const isHighlight = e.highlight;

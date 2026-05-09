@@ -14,8 +14,8 @@ const badgeColorsDark: Record<string, string> = {
 
 export function DifferencesTable({ rows }: { rows: DifferenceRow[] }) {
 	return (
-		<div className="overflow-x-auto mb-8 rounded-lg border border-border">
-			<table className="w-full font-sans text-sm">
+		<div className="overflow-x-auto mb-8 rounded-lg border border-border min-w-0">
+			<table className="w-full min-w-[600px] font-sans text-sm">
 				<thead>
 					<tr className="bg-bg-subtle border-b border-border">
 						<th className="text-left px-4 py-3 font-medium text-text-subtle w-8">#</th>
