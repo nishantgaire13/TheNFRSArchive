@@ -21,7 +21,7 @@ export function PitfallsList({ pitfalls }: { pitfalls: PitfallData[] }) {
 					<div
 						key={p.title}
 						className="rounded-lg border border-border p-4 border-l-4 border-l-[#c88a2e]"
-						style={{ background: "var(--glass-bg)", backdropFilter: "var(--glass-backdrop)" }}
+						style={{ background: "var(--glass-bg)" }}
 					>
 						<div className="flex items-start justify-between gap-3 mb-2">
 							<h4 className="font-sans text-sm font-medium text-text">{p.title}</h4>

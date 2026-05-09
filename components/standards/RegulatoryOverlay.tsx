@@ -20,7 +20,7 @@ export function RegulatoryOverlaySection({ data }: { data: RegulatoryOverlayType
 					<div
 						key={reg.key}
 						className={`rounded-lg border border-border border-l-4 ${reg.color} p-4`}
-						style={{ background: "var(--glass-bg)", backdropFilter: "var(--glass-backdrop)" }}
+						style={{ background: "var(--glass-bg)" }}
 					>
 						<div className="flex items-center gap-2 mb-2">
 							<span className="text-base">{reg.icon}</span>

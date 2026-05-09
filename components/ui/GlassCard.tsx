@@ -17,11 +17,10 @@ export function GlassCard({
 }: GlassCardProps) {
 	return (
 		<div
-			className={`rounded-lg shadow-clay-md border border-[var(--glass-border)] ${paddingClasses[padding]} ${className}`}
+			className={`rounded-lg shadow-clay-md border ${paddingClasses[padding]} ${className}`}
 			style={{
 				background: "var(--glass-bg)",
-				backdropFilter: "var(--glass-backdrop)",
-				WebkitBackdropFilter: "var(--glass-backdrop)",
+				borderColor: "var(--glass-border)",
 			}}
 		>
 			{children}

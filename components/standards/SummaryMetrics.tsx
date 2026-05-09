@@ -14,7 +14,7 @@ export function SummaryMetrics({ data }: { data: DifferencesData }) {
 				<div
 					key={m.label}
 					className="rounded-lg border border-border px-4 py-3 text-center min-w-0"
-					style={{ background: "var(--glass-bg)", backdropFilter: "var(--glass-backdrop)" }}
+					style={{ background: "var(--glass-bg)" }}
 				>
 					<p className="font-sans text-[10px] uppercase tracking-[0.1em] text-text-subtle mb-1">{m.label}</p>
 					<p className="font-display text-lg font-normal text-text">{m.value}</p>

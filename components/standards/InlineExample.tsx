@@ -16,7 +16,7 @@ export function InlineExample({ example }: { example: ExampleData }) {
 	return (
 		<div
 			className="rounded-lg border border-border p-5 mb-6"
-			style={{ background: "var(--glass-bg)", backdropFilter: "var(--glass-backdrop)" }}
+			style={{ background: "var(--glass-bg)" }}
 		>
 			<div className="flex items-center gap-2 mb-3">
 				<h4 className="font-display text-base font-normal text-text">{example.title}</h4>

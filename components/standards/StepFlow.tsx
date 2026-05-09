@@ -47,7 +47,7 @@ export function StepFlow({ steps }: { steps: StepData[] }) {
 								</motion.div>
 								<div
 									className="flex-1 rounded-lg border border-border p-4"
-									style={{ background: "var(--glass-bg)", backdropFilter: "var(--glass-backdrop)" }}
+									style={{ background: "var(--glass-bg)" }}
 								>
 									<div className="flex items-baseline gap-2 mb-1">
 										<h4 className="font-display text-base font-normal text-text">

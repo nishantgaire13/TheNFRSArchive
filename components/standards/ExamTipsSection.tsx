@@ -3,7 +3,7 @@ import type { ExamTip } from "@/lib/standard-data/types";
 function TipCard({ tip }: { tip: ExamTip }) {
 	return (
 		<div className="rounded-lg border border-border p-4 hover:border-accent/30 transition-colors"
-			style={{ background: "var(--glass-bg)", backdropFilter: "var(--glass-backdrop)" }}
+			style={{ background: "var(--glass-bg)" }}
 		>
 			<p className="font-mono text-[10px] uppercase tracking-wider text-accent mb-2">
 				{tip.source}
