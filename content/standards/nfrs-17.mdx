@@ -1,0 +1,110 @@
+---
+slug: nfrs-17
+nfrsNumber: "NFRS 17"
+ifrsEquivalent: "IFRS 17"
+title: "Insurance Contracts"
+titleItalicWord: "Insurance"
+topic: "insurance"
+effectiveDate: "2024-07-16"
+status: "deferred"
+carveOuts:
+  - "Effective date deferred from 16 July 2023 to 16 July 2024 by ASB Nepal"
+keywords: ["insurance", "contract", "CSM", "contractual service margin"]
+lastReviewed: "2026-04-20"
+summary: "NFRS 17 establishes a comprehensive measurement and presentation model for insurance contracts. ASB Nepal deferred the effective date by one year to 16 July 2024."
+heroMotif: "shield"
+relatedStandards: ["nfrs-9", "nfrs-15"]
+---
+
+## Overview
+
+<DifficultyContent level="beginner">
+
+Insurance companies collect premiums from customers and promise to pay claims when bad things happen (accidents, illness, property damage). But how should they record this in their accounts?
+
+NFRS 17 provides the answer. The key idea is: insurance companies should not record all premiums as immediate revenue. Instead, they earn revenue gradually as they provide insurance coverage over time.
+
+**Think of it like a subscription:** If you pay NPR 12,000 for a year of insurance, the company earns NPR 1,000 each month as it provides you coverage — not the full NPR 12,000 on the day you pay.
+
+The standard also requires insurers to estimate how much they will pay in future claims and keep that amount as a liability on their balance sheet.
+
+</DifficultyContent>
+
+<DifficultyContent level="medium">
+
+NFRS 17 is the most significant change to insurance accounting in decades. It replaces the patchwork of practices previously used under NFRS 4 (which essentially grandfathered existing local GAAP approaches) with a single, principles-based measurement model. The standard requires insurers to measure insurance contract liabilities using current, market-consistent estimates of future cash flows, and to recognise profit over the period that insurance coverage is provided.
+
+For Nepal's insurance industry — comprising the state-owned Rastriya Beema Sansthan and roughly two dozen private life and non-life insurers — NFRS 17 demands substantial changes in actuarial modelling, data systems, and financial statement presentation. This complexity drove ASB Nepal's decision to defer the effective date.
+
+</DifficultyContent>
+
+<DifficultyContent level="pro">
+
+NFRS 17 implements a current-value measurement model where insurance liabilities are remeasured each reporting period using updated assumptions — a departure from the locked-in assumptions of NFRS 4 / legacy frameworks. The Contractual Service Margin (CSM) mechanism is the standard's defining innovation: it absorbs day-one gains and releases them as revenue over the coverage period, preventing front-loading of profit at inception while allowing immediate recognition of losses (asymmetric treatment reflecting the Conceptual Framework's prudence principle).
+
+The standard's architecture creates three distinct measurement approaches — GMM, PAA, and VFA — each with different CSM unlock patterns and financial risk treatment. The VFA's variable fee mechanism (<ParaRef std="IFRS 17" para="B101" />) allows the CSM to absorb changes in financial variables, preventing artificial P&L volatility for participating contracts — critical for Nepal's with-profits life insurance market.
+
+Nepal's deferral reflects systemic readiness gaps: actuarial capability concentration (fewer than 50 qualified actuaries nationally), legacy policy administration systems without contract-level granularity, and absence of standardised yield curves for NPR-denominated discount rates.
+
+</DifficultyContent>
+
+## Scope & key definitions
+
+<DifficultyContent level="beginner">
+
+NFRS 17 applies to:
+- **Insurance contracts** — agreements where the insurer promises to pay if something bad happens
+- **Reinsurance** — insurance that insurance companies buy to protect themselves
+
+It does NOT apply to: product warranties from manufacturers (that is NFRS 15) or fixed-price service contracts.
+
+**Key terms:**
+- **Premium** — The price the customer pays for insurance.
+- **Claim** — The payment the insurer makes when the insured event happens.
+- **CSM (Contractual Service Margin)** — The profit the insurer expects to make from the contract, recognised gradually over the coverage period.
+
+</DifficultyContent>
+
+<DifficultyContent level="medium">
+
+NFRS 17 applies to insurance contracts issued, reinsurance contracts held, and investment contracts with discretionary participation features (<ParaRef std="IFRS 17" para="3" />). It does not apply to warranties provided by a manufacturer (covered by NFRS 15) or fixed-fee service contracts that happen to involve risk transfer.
+
+Key terms:
+
+- **Insurance contract** — a contract under which one party (the issuer) accepts significant insurance risk from another party (the policyholder) by agreeing to compensate the policyholder if a specified uncertain future event adversely affects the policyholder.
+- **Contractual service margin (CSM)** — the unearned profit the entity expects to recognise as it provides insurance coverage. The CSM cannot be negative at inception; if expected outflows exceed inflows, the contract is onerous and a loss is recognised immediately.
+- **Risk adjustment** — the compensation the entity requires for bearing uncertainty about the amount and timing of cash flows from non-financial risk.
+- **Coverage units** — the quantity of insurance coverage provided, used to determine the pattern for releasing the CSM into profit or loss.
+
+</DifficultyContent>
+
+<DifficultyContent level="pro">
+
+Scope determination requires the "significant insurance risk" test — a contract transfers significant insurance risk only if a scenario exists with commercial substance in which the present value of the insurer's net cash outflows increases due to the insured event. The test is applied at contract inception using reasonable scenarios, not tail events. Investment contracts without discretionary participation features (pure unit-linked savings products) fail the test and are scoped into NFRS 9.
+
+The risk adjustment for non-financial risk is entity-specific — there is no prescribed technique. Common approaches: confidence level (percentile), cost of capital, and conditional tail expectation. Nepal's insurers predominantly use confidence-level methods calibrated to 75th–85th percentile, though disclosure of the confidence level is required only if that technique is used. The risk adjustment is conceptually distinct from the CSM: risk adjustment compensates for uncertainty, CSM represents expected profit.
+
+Annual cohort restrictions (<ParaRef std="IFRS 17" para="22" />) prevent cross-subsidisation across vintage years. This is particularly challenging for Nepal's life insurers with legacy portfolios where contract-level inception-year data may not exist in current systems.
+
+</DifficultyContent>
+
+## Recognition
+
+An entity recognises a group of insurance contracts from the earliest of: the beginning of the coverage period, the date when the first payment from the policyholder is due, or the date when the group becomes onerous (<ParaRef std="IFRS 17" para="25" />).
+
+Insurance contracts are grouped into portfolios of contracts with similar risks that are managed together, then divided into three profitability cohorts within each annual cohort: onerous contracts, contracts with no significant possibility of becoming onerous, and remaining contracts.
+
+## Measurement
+
+NFRS 17 provides three measurement models:
+
+**General measurement model (GMM):** The fulfilment cash flows comprise estimates of future cash flows, discounting to present value, and a risk adjustment for non-financial risk. Plus the CSM, released to profit or loss based on coverage units (<ParaRef std="IFRS 17" para="32" />).
+
+**Premium allocation approach (PAA):** A simplified approach permitted for contracts with coverage periods of one year or less. Under PAA, the liability for remaining coverage is initially the premiums received minus acquisition costs (<ParaRef std="IFRS 17" para="53" />). Most non-life contracts in Nepal qualify.
+
+**Variable fee approach (VFA):** For contracts with direct participation features, the CSM absorbs changes in the entity's share of returns on underlying items (<ParaRef std="IFRS 17" para="B101" />).
+
+## Presentation & disclosure
+
+Insurance revenue replaces gross written premiums on the face of the income statement. Revenue is recognised as coverage is provided, not when premiums are received. Insurance service expenses include incurred claims, changes in the liability for incurred claims, and amortisation of acquisition costs.
+

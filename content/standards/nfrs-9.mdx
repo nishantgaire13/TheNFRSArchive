@@ -1,0 +1,132 @@
+---
+slug: nfrs-9
+nfrsNumber: "NFRS 9"
+ifrsEquivalent: "IFRS 9"
+title: "Financial Instruments"
+titleItalicWord: "Financial"
+topic: "financial-instruments"
+effectiveDate: "2021-07-16"
+status: "carve-out"
+carveOuts:
+  - "Effective interest rate method deferred for certain entities"
+  - "Expected credit loss model — simplified approach permitted for banks until 2025"
+keywords: ["financial instruments", "ECL", "expected credit loss", "impairment", "hedge"]
+lastReviewed: "2026-04-20"
+summary: "NFRS 9 governs the classification, measurement, impairment, and hedge accounting of financial instruments. It contains notable carve-outs from IFRS 9, including ECL deferrals for Nepali banks."
+heroMotif: "scale"
+relatedStandards: ["nfrs-15", "nfrs-17"]
+---
+
+## Overview
+
+<DifficultyContent level="beginner">
+
+Financial instruments are things like loans, investments in shares, bonds, and even trade receivables (money customers owe you). NFRS 9 tells businesses how to record and value these items.
+
+The standard answers three main questions:
+
+1. **How do you categorise financial instruments?** Some are held to collect cash (like a bank loan), others are held for trading (like shares you plan to sell quickly).
+2. **How do you value them?** Some stay at their original cost (adjusted over time), while others are updated to their current market value.
+3. **What about bad debts?** Instead of waiting until someone actually defaults, NFRS 9 requires you to estimate future losses upfront. This is called the "expected credit loss" (ECL) model.
+
+**Why is this important in Nepal?** Banks are the backbone of Nepal's economy. NFRS 9 changed how they calculate loan loss provisions, directly affecting their reported profits.
+
+</DifficultyContent>
+
+<DifficultyContent level="medium">
+
+NFRS 9 is Nepal's equivalent of IFRS 9 and represents the most complex standard in the NFRS suite. It covers how entities classify and measure financial assets and liabilities, how they account for impairment (through the expected credit loss model), and how they apply hedge accounting.
+
+For Nepal's financial sector — banks, development banks, finance companies, and microfinance institutions — NFRS 9 is the single most consequential standard. The shift from an incurred loss model (under old NAS 39) to an expected credit loss (ECL) model changed provisioning practices across the entire banking system. Nepal Rastra Bank (NRB) had to coordinate its regulatory provisioning framework with NFRS 9's requirements, leading to the carve-outs described below.
+
+Non-financial entities are also affected: trade receivables, loans to related parties, and investments in equity and debt instruments all fall within scope.
+
+</DifficultyContent>
+
+<DifficultyContent level="pro">
+
+NFRS 9 implements the IASB's response to the 2008 financial crisis critique that incurred-loss models (NAS 39) delayed recognition of credit losses until trigger events occurred — "too little, too late." The ECL model's forward-looking philosophy requires day-one loss provisioning and continuous reassessment based on reasonable and supportable forecasts.
+
+Nepal's adoption is notable for its active carve-outs — rare in the NFRS framework. The ECL simplified approach deferral for banks reflects the structural reality that Nepal's banking sector lacked: (a) granular historical default data segmented by PD/LGD/EAD parameters, (b) validated statistical models for through-the-cycle vs. point-in-time PD estimation, and (c) macroeconomic scenario-modelling capability for forward-looking overlays. The convergence of NRB's regulatory provisioning (prescriptive, rule-based) with NFRS 9's ECL (principles-based, model-driven) remains Nepal's single most complex accounting policy challenge.
+
+The hedge accounting chapter (Chapter 6) is substantially redesigned from NAS 39, replacing bright-line 80–125% effectiveness testing with a principles-based assessment. However, hedge accounting uptake in Nepal remains near-zero outside foreign-currency borrowing hedges by large corporates.
+
+</DifficultyContent>
+
+## Scope & key definitions
+
+<DifficultyContent level="beginner">
+
+NFRS 9 applies to most financial items a business holds. This includes:
+
+- **Money others owe you** (trade receivables, loans given)
+- **Investments** (shares, bonds, mutual funds)
+- **Money you owe others** (borrowings, trade payables)
+
+It does NOT apply to: lease obligations (NFRS 16), insurance (NFRS 17), or your own shares.
+
+**Key terms:**
+
+- **Amortised cost** — Recording a loan at its original amount, then adjusting it gradually as interest accrues and principal is repaid. Like tracking a home loan balance.
+- **Fair value** — The current market price of an investment. This changes daily for traded shares.
+- **Expected credit loss (ECL)** — An estimate of how much money you might lose from loans that customers may not repay.
+
+</DifficultyContent>
+
+<DifficultyContent level="medium">
+
+NFRS 9 applies to all financial instruments except those scoped into other standards — lease receivables/payables (NFRS 16), insurance contract assets/liabilities (NFRS 17), equity instruments issued by the entity (NAS 32), and employer obligations under employee benefit plans (NAS 19) (<ParaRef std="IFRS 9" para="2.1" />).
+
+Key terms:
+
+- **Financial asset** — cash, an equity instrument of another entity, or a contractual right to receive cash or exchange financial instruments under favourable conditions.
+- **Amortised cost** — the amount at initial recognition minus principal repayments, plus or minus cumulative amortisation of any premium/discount, minus any impairment.
+- **Expected credit loss (ECL)** — the weighted average of credit losses with the respective risks of default as weights.
+- **SPPI test** — solely payments of principal and interest. A financial asset passes this test if its contractual cash flows are consistent with a basic lending arrangement (<ParaRef std="IFRS 9" para="4.1.2" />).
+
+</DifficultyContent>
+
+<DifficultyContent level="pro">
+
+Scope boundary issues requiring careful analysis: (a) loan commitments — in scope when the entity has a past practice of selling originated loans (otherwise, only the ECL component applies), (b) financial guarantee contracts — in scope unless the issuer elects to apply NFRS 17, (c) contracts to buy/sell non-financial items — in scope only if they can be settled net and are not for the entity's expected purchase/sale requirements ("own use" exemption at <ParaRef std="IFRS 9" para="2.4" />).
+
+The SPPI test at <ParaRef std="IFRS 9" para="4.1.2" /> is the gating criterion for amortised cost and FVOCI classification. Key failure points: leverage features (where contractual cash flows are a multiple of principal changes), equity conversion features, and modified time value of money elements that create more-than-de-minimis cash flow differences vs. a benchmark instrument. The benchmark cash flow test at <ParaRef std="IFRS 9" para="B4.1.9B" /> is quantitative — Nepal's banking sector frequently encounters it with restructured loans carrying below-market concessionary rates.
+
+</DifficultyContent>
+
+## Recognition
+
+Financial assets are classified into three measurement categories based on two tests: the entity's business model for managing the assets and the SPPI test on contractual cash flows (<ParaRef std="IFRS 9" para="4.1.1" />):
+
+1. **Amortised cost** — business model is to hold assets to collect contractual cash flows, and cash flows are SPPI. Typical example: bank loans, trade receivables.
+2. **Fair value through other comprehensive income (FVOCI)** — business model is both collecting cash flows and selling, and cash flows are SPPI. Typical example: bond portfolios managed for liquidity.
+3. **Fair value through profit or loss (FVTPL)** — all other financial assets, or those designated at FVTPL to eliminate an accounting mismatch.
+
+Financial liabilities are generally measured at amortised cost, with an option to designate at FVTPL.
+
+Initial recognition occurs when the entity becomes party to the contractual provisions of the instrument (<ParaRef std="IFRS 9" para="3.1.1" />).
+
+## Measurement
+
+**At initial recognition:** fair value plus (for instruments not at FVTPL) directly attributable transaction costs (<ParaRef std="IFRS 9" para="5.1.1" />).
+
+**Subsequently:**
+
+- Amortised cost instruments use the effective interest method, spreading interest revenue/expense over the instrument's life.
+- FVOCI debt instruments are remeasured to fair value in OCI, with impairment, interest, and foreign exchange in profit or loss.
+- FVTPL instruments — all changes in fair value flow through profit or loss.
+
+**Impairment — the ECL model:** applies to amortised cost and FVOCI debt instruments. The standard uses a three-stage model (<ParaRef std="IFRS 9" para="5.5.3" />):
+
+- **Stage 1** — performing assets: 12-month ECL provision.
+- **Stage 2** — significant increase in credit risk since origination: lifetime ECL.
+- **Stage 3** — credit-impaired: lifetime ECL, interest recognised on net carrying amount.
+
+For trade receivables without a significant financing component, entities may use the **simplified approach** — always recognise lifetime ECL without tracking stage transfers (<ParaRef std="IFRS 9" para="5.5.15" />).
+
+## Presentation & disclosure
+
+Financial instruments are presented according to their measurement category. Offsetting a financial asset and liability is permitted only when the entity has a legally enforceable right to set off and intends to settle net (<ParaRef std="IFRS 9" para="7.1" /> via NAS 32).
+
+Disclosures (largely governed by NFRS 7 / IFRS 7) are extensive for financial institutions and include carrying amounts by category, ECL reconciliation, credit risk concentration analysis, sensitivity analysis for market risk, and hedge accounting disclosures including hedge effectiveness.
+
