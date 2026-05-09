@@ -200,14 +200,14 @@ export default async function StandardPage({ params }: Props) {
 			{/* ===== CONTENT — three-column layout ===== */}
 			<DifficultyProvider>
 				<div className="max-w-[1280px] mx-auto px-5 md:px-8 lg:px-12 pb-16">
-					<div className="grid grid-cols-1 lg:grid-cols-[220px_1fr_280px] gap-8 lg:gap-10">
+					<div className="grid grid-cols-1 lg:grid-cols-[220px_1fr_280px] gap-8 lg:gap-10 items-start">
 
 						{/* Left sidebar — ProgressTOC */}
-						<div className="hidden lg:block sticky top-24">
+						<aside className="hidden lg:block sticky top-24 max-h-[calc(100vh-7rem)] overflow-y-auto pr-1 scrollbar-thin">
 							<GlassCard padding="sm" className="shadow-clay-sm">
 								<ProgressTOC items={tocItems} storageKey={slug} />
 							</GlassCard>
-						</div>
+						</aside>
 
 						{/* Article body */}
 						<article className="min-w-0 font-serif text-base leading-relaxed text-text prose-headings:font-display prose-headings:font-light prose-headings:text-text prose-headings:tracking-tight [&>h2]:text-2xl [&>h2]:mt-12 [&>h2]:mb-4 [&>h2]:scroll-mt-24 [&>h2]:border-b [&>h2]:border-hairline [&>h2]:pb-2 [&>p]:mb-4 [&>p]:leading-relaxed [&>ul]:mb-4 [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:space-y-1.5 [&>ol]:mb-4 [&>ol]:list-decimal [&>ol]:pl-6 [&>ol]:space-y-1.5 [&>li]:leading-relaxed [&_strong]:font-semibold [&_strong]:text-text [&>div]:mb-6">
@@ -314,11 +314,15 @@ export default async function StandardPage({ params }: Props) {
 						</article>
 
 						{/* Right sidebar */}
-						<div className="hidden lg:block sticky top-24">
-							<DifficultySelector />
+						<aside className="hidden lg:flex flex-col gap-6 sticky top-24 max-h-[calc(100vh-7rem)] overflow-y-auto pr-1 scrollbar-thin">
+							{/* Difficulty selector */}
+							<GlassCard padding="sm" className="shadow-clay-sm">
+								<DifficultySelector />
+							</GlassCard>
 
+							{/* Key differences quick link */}
 							{pageData && (
-								<GlassCard padding="sm" className="shadow-clay-sm mt-6">
+								<GlassCard padding="sm" className="shadow-clay-sm">
 									<Eyebrow as="span" className="text-[10px] mb-2">
 										Quick Stats
 									</Eyebrow>
@@ -343,8 +347,9 @@ export default async function StandardPage({ params }: Props) {
 								</GlassCard>
 							)}
 
+							{/* Exam relevance */}
 							{pageData && pageData.examRelevance.length > 0 && (
-								<GlassCard padding="sm" className="shadow-clay-sm mt-6">
+								<GlassCard padding="sm" className="shadow-clay-sm">
 									<Eyebrow as="span" className="text-[10px] mb-2">
 										Exam Relevance
 									</Eyebrow>
@@ -361,8 +366,9 @@ export default async function StandardPage({ params }: Props) {
 								</GlassCard>
 							)}
 
+							{/* Related standards with reasons */}
 							{pageData && pageData.relatedStandards.length > 0 ? (
-								<ClayCard padding="sm" className="mt-6">
+								<ClayCard padding="sm">
 									<Eyebrow as="span" className="text-[10px] mb-2">
 										Related standards
 									</Eyebrow>
@@ -383,7 +389,7 @@ export default async function StandardPage({ params }: Props) {
 									</ul>
 								</ClayCard>
 							) : related.length > 0 ? (
-								<ClayCard padding="sm" className="mt-6">
+								<ClayCard padding="sm">
 									<Eyebrow as="span" className="text-[10px] mb-2">
 										Related standards
 									</Eyebrow>
@@ -402,7 +408,8 @@ export default async function StandardPage({ params }: Props) {
 								</ClayCard>
 							) : null}
 
-							<ClayCard padding="sm" className="mt-6">
+							{/* Authoritative sources */}
+							<ClayCard padding="sm">
 								<Eyebrow as="span" className="text-[10px] mb-2">
 									Authoritative sources
 								</Eyebrow>
@@ -429,8 +436,7 @@ export default async function StandardPage({ params }: Props) {
 									</li>
 								</ul>
 							</ClayCard>
-						</div>
-
+						</aside>
 					</div>
 				</div>
 			</DifficultyProvider>
