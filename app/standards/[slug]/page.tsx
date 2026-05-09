@@ -210,7 +210,7 @@ export default async function StandardPage({ params }: Props) {
 				<div className="max-w-[1280px] mx-auto px-5 md:px-8 lg:px-12 pb-16">
 					<div className="grid grid-cols-1 lg:grid-cols-[220px_1fr_280px] gap-8 lg:gap-10 items-start">
 						{/* Left sidebar — ProgressTOC */}
-						<aside className="hidden lg:block sticky top-24 max-h-[calc(100vh-7rem)] overflow-y-auto pr-1 scrollbar-thin">
+						<aside className="hidden lg:block sticky top-24 self-start">
 							<GlassCard padding="sm" className="shadow-clay-sm">
 								<ProgressTOC items={tocItems} storageKey={slug} />
 							</GlassCard>
@@ -321,7 +321,7 @@ export default async function StandardPage({ params }: Props) {
 						</article>
 
 						{/* Right sidebar — independently scrollable */}
-						<aside className="hidden lg:flex flex-col gap-6 sticky top-24 max-h-[calc(100vh-7rem)] overflow-y-auto pr-1 scrollbar-thin">
+						<aside className="hidden lg:flex flex-col gap-6 sticky top-24 self-start max-h-[calc(100vh-7rem)] overflow-y-auto pr-1 scrollbar-thin">
 							{/* Difficulty selector */}
 							<GlassCard padding="sm" className="shadow-clay-sm">
 								<DifficultySelector />
