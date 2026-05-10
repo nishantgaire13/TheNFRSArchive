@@ -5,6 +5,7 @@ import { getStandardMDX, getAllMDXSlugs } from "@/lib/mdx";
 import { getStandard, getRelatedStandards, standards, SITE_URL } from "@/lib/standards";
 import { getStandardPageData } from "@/lib/standard-data";
 import { StandardIcon } from "@/components/ui/StandardIcon";
+import { StandardBgIllustration } from "@/components/illustrations/StandardBgIllustration";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Badge, type BadgeVariant } from "@/components/ui/Badge";
 import { ClayCard } from "@/components/ui/ClayCard";
@@ -130,6 +131,13 @@ export default async function StandardPage({ params }: Props) {
 
 			{/* ===== HERO ===== */}
 			<section className="relative">
+				<div className="absolute inset-0 pointer-events-none overflow-hidden">
+					<div className="max-w-[1280px] mx-auto h-full">
+						<div className="absolute top-0 right-[max(0px,calc((100vw-1280px)/2*-1))] w-[65%] h-[380px] pointer-events-none select-none z-0 max-md:hidden">
+							<StandardBgIllustration slug={slug} number={entry.nfrsNumber} name={entry.title} />
+						</div>
+					</div>
+				</div>
 				<div
 					className="absolute inset-0 pointer-events-none"
 					style={{
