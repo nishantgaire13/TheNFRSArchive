@@ -129,7 +129,7 @@ export default async function StandardPage({ params }: Props) {
 			/>
 
 			{/* ===== HERO ===== */}
-			<section className="relative overflow-hidden">
+			<section className="relative">
 				<div
 					className="absolute inset-0 pointer-events-none"
 					style={{
