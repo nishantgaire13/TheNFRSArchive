@@ -173,19 +173,7 @@ export function Header() {
 			}}
 		>
 			<style>{`
-			@keyframes navShimmer {
-				0% { transform: translateX(-100%); }
-				12.5% { transform: translateX(-100%); }
-				22.5% { transform: translateX(-15%); }
-				37.5% { transform: translateX(-15%); }
-				47.5% { transform: translateX(41.7%); }
-				62.5% { transform: translateX(41.7%); }
-				72.5% { transform: translateX(99%); }
-				87.5% { transform: translateX(99%); }
-				97.5% { transform: translateX(-100%); }
-				100% { transform: translateX(-100%); }
-			}
-			.nav-shimmer-track {
+			@keyframes searchGlow {
 				position: absolute;
 				inset: 0;
 				pointer-events: none;
@@ -219,6 +207,47 @@ export function Header() {
 					rgba(255, 255, 255, 0.04) 60%,
 					transparent 100%
 				);
+			}
+			@media (min-width: 769px) {
+				@keyframes navLightSweep {
+					0%   { left: -35%; top: -200%; }
+					10%  { left: -35%; top: -200%; }
+					30%  { left: 115%; top: 200%; }
+					31%  { left: -35%; top: -200%; }
+					100% { left: -35%; top: -200%; }
+				}
+				.nav-shimmer-track::before {
+					content: "";
+					position: absolute;
+					inset: 0;
+					overflow: hidden;
+					border-radius: inherit;
+					pointer-events: none;
+					z-index: 1;
+				}
+				.nav-shimmer-track::before {
+					width: 35%;
+					height: 400%;
+					background: linear-gradient(
+						105deg,
+						transparent 0%,
+						rgba(255, 255, 255, 0.0) 35%,
+						rgba(255, 255, 255, 0.11) 48%,
+						rgba(255, 255, 255, 0.0) 61%,
+						transparent 100%
+					);
+					animation: navLightSweep 5s ease-in-out infinite;
+				}
+				[data-theme="dark"] .nav-shimmer-track::before {
+					background: linear-gradient(
+						105deg,
+						transparent 0%,
+						rgba(255, 255, 255, 0.0) 35%,
+						rgba(255, 255, 255, 0.08) 48%,
+						rgba(255, 255, 255, 0.0) 61%,
+						transparent 100%
+					);
+				}
 			}
 			@keyframes searchGlow {
 				0% { --glow-angle: 0deg; }
