@@ -25,13 +25,13 @@ export function ThemeToggle({ className = "" }: ThemeToggleProps) {
 	useEffect(() => {
 		setMounted(true);
 		const stored = localStorage.getItem("theme") as ThemeMode | null;
-		if (stored && stored !== "system") {
+		if (stored) {
 			setMode(stored);
 			applyTheme(stored);
 		} else {
-			const resolved = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-			setMode(resolved);
-			applyTheme(resolved);
+			// Always default to light on first visit
+			setMode("light");
+			applyTheme("light");
 		}
 
 		const mql = window.matchMedia("(prefers-color-scheme: dark)");
@@ -51,7 +51,7 @@ export function ThemeToggle({ className = "" }: ThemeToggleProps) {
 		applyTheme(next);
 	}
 
-	const icons: Record<ThemeMode, React.ReactNode> = {
+	const icons: Record<Exclude<ThemeMode, "system">, React.ReactNode> = {
 		light: (
 			<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
 				<circle cx="12" cy="12" r="5" />
