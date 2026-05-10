@@ -211,9 +211,9 @@ export function Header() {
 			@media (min-width: 769px) {
 				@keyframes navLightSweep {
 					0%   { left: -35%; top: -200%; }
-					10%  { left: -35%; top: -200%; }
-					30%  { left: 115%; top: 200%; }
-					31%  { left: -35%; top: -200%; }
+					5%   { left: -35%; top: -200%; }
+					25%  { left: 115%; top: 200%; }
+					26%  { left: -35%; top: -200%; }
 					100% { left: -35%; top: -200%; }
 				}
 				.nav-shimmer-track::before {
@@ -236,7 +236,7 @@ export function Header() {
 						rgba(255, 255, 255, 0.0) 61%,
 						transparent 100%
 					);
-					animation: navLightSweep 5s ease-in-out infinite;
+					animation: navLightSweep 12s ease-in-out infinite;
 				}
 				[data-theme="dark"] .nav-shimmer-track::before {
 					background: linear-gradient(
