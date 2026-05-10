@@ -199,7 +199,7 @@ export default async function StandardPage({ params }: Props) {
 
 			{/* ===== CONTENT — three-column layout ===== */}
 			<DifficultyProvider>
-				<div className="max-w-[1280px] mx-auto px-5 md:px-8 lg:px-12 pb-16">
+				<div className="max-w-[1280px] mx-auto px-5 md:px-8 lg:px-12 pb-16 max-md:overflow-x-auto">
 					<div className="grid grid-cols-1 lg:grid-cols-[220px_1fr_280px] gap-8 lg:gap-10 items-start">
 
 						{/* Left sidebar — ProgressTOC */}
