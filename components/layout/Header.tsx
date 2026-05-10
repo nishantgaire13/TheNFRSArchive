@@ -224,43 +224,79 @@ export function Header() {
 				0% { --glow-angle: 0deg; }
 				100% { --glow-angle: 360deg; }
 			}
-			.search-glow-wrap {
-				position: relative;
-				border-radius: 9999px;
-			}
-			.search-glow-wrap::before {
-				content: "";
-				position: absolute;
-				inset: -2px;
-				border-radius: inherit;
-				background: conic-gradient(
-					from var(--glow-angle, 0deg),
-					transparent 70%,
-					rgba(139, 26, 26, 0.25) 85%,
-					rgba(139, 26, 26, 0.4) 90%,
-					rgba(139, 26, 26, 0.25) 95%,
-					transparent 100%
-				);
-				animation: searchGlow 3s linear infinite;
-				mask:
-					linear-gradient(#fff 0 0) padding-box,
-					linear-gradient(#fff 0 0);
-				mask-composite: exclude;
-				-webkit-mask:
-					linear-gradient(#fff 0 0) padding-box,
-					linear-gradient(#fff 0 0);
-				-webkit-mask-composite: xor;
-				pointer-events: none;
-			}
-			[data-theme="dark"] .search-glow-wrap::before {
-				background: conic-gradient(
-					from var(--glow-angle, 0deg),
-					transparent 70%,
-					rgba(192, 97, 97, 0.2) 85%,
-					rgba(192, 97, 97, 0.35) 90%,
-					rgba(192, 97, 97, 0.2) 95%,
-					transparent 100%
-				);
+			@media (min-width: 769px) {
+				.search-glow-wrap {
+					position: relative;
+					border-radius: 9999px;
+					padding: 2px;
+					background: transparent;
+					transition: padding 0.2s ease;
+				}
+				.search-glow-wrap::before {
+					content: "";
+					position: absolute;
+					inset: 0;
+					border-radius: inherit;
+					background: conic-gradient(
+						from var(--glow-angle, 0deg),
+						transparent 0%,
+						rgba(139, 26, 26, 0.1) 15%,
+						rgba(139, 26, 26, 0.7) 30%,
+						rgba(60, 8, 8, 1) 42%,
+						rgba(139, 26, 26, 0.7) 54%,
+						rgba(139, 26, 26, 0.1) 69%,
+						transparent 100%
+					);
+					animation: searchGlow 3.5s linear infinite;
+					mask:
+						linear-gradient(#fff 0 0) padding-box,
+						linear-gradient(#fff 0 0);
+					mask-composite: exclude;
+					-webkit-mask:
+						linear-gradient(#fff 0 0) padding-box,
+						linear-gradient(#fff 0 0);
+					-webkit-mask-composite: xor;
+					pointer-events: none;
+					z-index: 0;
+				}
+				[data-theme="dark"] .search-glow-wrap::before {
+					background: conic-gradient(
+						from var(--glow-angle, 0deg),
+						transparent 0%,
+						rgba(212, 106, 106, 0.1) 15%,
+						rgba(212, 106, 106, 0.75) 30%,
+						rgba(90, 20, 20, 1) 42%,
+						rgba(212, 106, 106, 0.75) 54%,
+						rgba(212, 106, 106, 0.1) 69%,
+						transparent 100%
+					);
+				}
+				.search-glow-wrap::after {
+					content: "";
+					position: absolute;
+					inset: 0;
+					border-radius: inherit;
+					box-shadow:
+						0 0 12px 2px rgba(139, 26, 26, 0.2),
+						0 0 28px 5px rgba(139, 26, 26, 0.08);
+					pointer-events: none;
+					z-index: 0;
+					animation: searchGlow 3.5s linear infinite;
+					background: transparent;
+				}
+				[data-theme="dark"] .search-glow-wrap::after {
+					box-shadow:
+						0 0 12px 2px rgba(212, 106, 106, 0.25),
+						0 0 28px 5px rgba(212, 106, 106, 0.1);
+				}
+				.search-glow-wrap:hover::before,
+				.search-glow-wrap:hover::after {
+					animation-duration: 1.5s;
+				}
+				.search-glow-wrap button {
+					position: relative;
+					z-index: 1;
+				}
 			}
 		`}</style>
 		<div className="max-w-[1280px] mx-auto px-5 md:px-8 lg:px-12">
