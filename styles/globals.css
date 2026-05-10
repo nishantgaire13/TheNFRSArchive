@@ -230,8 +230,6 @@ html {
   background-color: var(--site-bg);
   color: var(--site-text);
   scroll-behavior: smooth;
-  overflow-x: hidden;
-  overscroll-behavior-x: contain;
 }
 
 body {
