@@ -174,8 +174,16 @@ export function Header() {
 		>
 			<style>{`
 			@keyframes navShimmer {
-				0% { transform: translateX(-200%); }
-				100% { transform: translateX(200%); }
+				0% { transform: translateX(-100%); }
+				12.5% { transform: translateX(-100%); }
+				22.5% { transform: translateX(-15%); }
+				37.5% { transform: translateX(-15%); }
+				47.5% { transform: translateX(41.7%); }
+				62.5% { transform: translateX(41.7%); }
+				72.5% { transform: translateX(99%); }
+				87.5% { transform: translateX(99%); }
+				97.5% { transform: translateX(-100%); }
+				100% { transform: translateX(-100%); }
 			}
 			.nav-shimmer-track {
 				position: absolute;
