@@ -130,9 +130,9 @@ export default async function StandardPage({ params }: Props) {
 			/>
 
 			{/* ===== HERO ===== */}
-			<section className="relative">
-				<div className="absolute inset-0 pointer-events-none overflow-hidden">
-					<div className="max-w-[1280px] mx-auto h-full">
+			<section className="relative overflow-hidden max-md:overflow-clip">
+				<div className="absolute inset-0 pointer-events-none max-md:contents">
+					<div className="max-w-[1280px] mx-auto h-full max-md:hidden">
 						<div className="absolute top-0 right-[max(0px,calc((100vw-1280px)/2*-1))] w-[65%] h-[380px] pointer-events-none select-none z-0 max-md:hidden">
 							<StandardBgIllustration slug={slug} number={entry.nfrsNumber} name={entry.title} />
 						</div>
