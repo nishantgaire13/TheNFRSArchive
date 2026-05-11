@@ -1,4 +1,4 @@
-export type TagType = "nepal-specific" | "exam-trap" | "regulatory" | "standard-reference" | "general";
+export type TagType = "general" | "nepal-specific" | "exam-trap" | "regulatory" | "standard-reference";
 
 export interface GlossaryEntry {
 	term: string;

@@ -26,7 +26,7 @@ export function GlossaryClient() {
 	const [activeFilter, setActiveFilter] = useState<FilterType>("all");
 
 	const filtered = useMemo(() => {
-		let entries = glossaryEntries;
+		let entries = allEntries;
 
 		if (activeFilter !== "all") {
 			entries = entries.filter((e) => e.tags.includes(activeFilter as TagType));
