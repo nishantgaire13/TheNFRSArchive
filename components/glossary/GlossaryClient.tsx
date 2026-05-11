@@ -2,12 +2,15 @@
 
 import { useState, useMemo, useCallback } from "react";
 import Link from "next/link";
-import { glossaryEntries, tagLabels, tagColors, type TagType } from "@/data/glossary";
+import { glossaryEntries, generalGlossaryEntries, tagLabels, tagColors, type TagType } from "@/data/glossary";
+
+const allEntries = [...glossaryEntries, ...generalGlossaryEntries];
 
 type FilterType = "all" | TagType;
 
 const FILTER_CHIPS: { value: FilterType; label: string }[] = [
 	{ value: "all", label: "All" },
+	{ value: "general", label: "General" },
 	{ value: "nepal-specific", label: "Nepal-Specific" },
 	{ value: "exam-trap", label: "Exam Trap" },
 	{ value: "regulatory", label: "Regulatory" },
@@ -15,7 +18,7 @@ const FILTER_CHIPS: { value: FilterType; label: string }[] = [
 ];
 
 const ALL_LETTERS = Array.from(
-	new Set(glossaryEntries.map((e) => e.term[0].toUpperCase()))
+	new Set(allEntries.map((e) => e.term[0].toUpperCase()))
 ).sort();
 
 export function GlossaryClient() {
@@ -123,7 +126,7 @@ export function GlossaryClient() {
 				<div className="flex-1 min-w-0">
 					<p className="font-sans text-sm text-text-muted mb-6">
 						Showing <span className="font-medium text-text">{filtered.length}</span> of{" "}
-						{glossaryEntries.length} terms
+						{glossaryEntries.length + generalGlossaryEntries.length} terms
 					</p>
 
 					{filtered.length === 0 && (
@@ -223,7 +226,7 @@ export function GlossaryClient() {
 			<div className="lg:hidden mt-6">
 				<p className="font-sans text-sm text-text-muted mb-6">
 					Showing <span className="font-medium text-text">{filtered.length}</span> of{" "}
-					{glossaryEntries.length} terms
+					{glossaryEntries.length + generalGlossaryEntries.length} terms
 				</p>
 
 				{filtered.length === 0 && (
