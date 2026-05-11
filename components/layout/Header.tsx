@@ -25,6 +25,7 @@ const NAV_LINKS = [
 	{ href: "/", label: "Home" },
 	{ href: "/standards", label: "Standards" },
 	{ href: "/carve-outs", label: "Carve-outs" },
+	{ href: "/glossary", label: "Glossary" },
 	{ href: "/about", label: "About" },
 ];
 
