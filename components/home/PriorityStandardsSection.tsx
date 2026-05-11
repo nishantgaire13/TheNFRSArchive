@@ -28,11 +28,7 @@ export function PriorityStandardsSection({
 			<div className="flex items-baseline justify-between mb-8">
 				<div>
 					<Eyebrow className="mb-2">Cross-referencing the pillars</Eyebrow>
-					<h2
-						className="font-display text-3xl font-light entrance-heading"
-						data-entrance="heading"
-						data-stagger="0"
-					>
+					<h2 className="font-display text-3xl font-light">
 						Priority Standards
 					</h2>
 				</div>
