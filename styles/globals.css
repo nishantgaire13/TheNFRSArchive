@@ -223,6 +223,179 @@
 }
 
 /* ============================================================
+   Entrance animation CSS variables
+   ============================================================ */
+
+@layer base {
+  :root {
+    /* Section 1 — Priority Standards */
+    --anim-card-duration:     400ms;
+    --anim-card-easing:       cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --anim-card-stagger:      80ms;
+
+    /* Section 1 — Section heading */
+    --anim-heading-duration:  200ms;
+    --anim-heading-easing:     cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    /* Section 2 — Topic chips */
+    --anim-chip-duration:      300ms;
+    --anim-chip-easing:        cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --anim-chip-stagger:       50ms;
+    --anim-chip-offset:        -8px;
+
+    /* Section 3 — Positioning block */
+    --anim-block-duration:     500ms;
+    --anim-block-easing:       cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --anim-word-duration:      150ms;
+    --anim-word-stagger:       60ms;
+    --anim-word-delay:         300ms;
+    --anim-cta-delay:          250ms;
+  }
+}
+
+/* ── Shared entrance base classes ─────────────────────────── */
+
+/* 1. "Ready" state — animation has been triggered by JS */
+.entrance-ready {
+  opacity: 0;
+}
+
+/* 2. "Visible" state — added by Intersection Observer */
+.entrance-visible {
+  opacity: 1;
+  transition:
+    opacity var(--anim-heading-duration, 200ms)
+              var(--anim-heading-easing, ease-out);
+}
+
+/* ── Section 1: Priority Standards cards ──────────────────── */
+
+.entrance-card {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.entrance-card.entrance-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: var(--entrance-delay, 0ms);
+  transition:
+    opacity var(--anim-card-duration, 400ms)
+              var(--anim-card-easing, ease-out),
+    transform var(--anim-card-duration, 400ms)
+              var(--anim-card-easing, ease-out);
+}
+
+/* ── Section 1: Section heading ────────────────────────────── */
+
+.entrance-heading {
+  opacity: 0;
+}
+
+.entrance-heading.entrance-visible {
+  opacity: 1;
+  transition: opacity var(--anim-heading-duration, 200ms) ease-out;
+}
+
+/* ── Section 2: Topic chips ────────────────────────────────── */
+
+.entrance-chip {
+  opacity: 0;
+  transform: translateX(var(--anim-chip-offset, -8px));
+}
+
+.entrance-chip.entrance-visible {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: var(--entrance-delay, 0ms);
+  transition:
+    opacity var(--anim-chip-duration, 300ms)
+              var(--anim-chip-easing, ease-out),
+    transform var(--anim-chip-duration, 300ms)
+              var(--anim-chip-easing, ease-out);
+}
+
+/* ── Section 3: Positioning block ─────────────────────────── */
+
+.entrance-block-left {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.entrance-block-left.entrance-visible {
+  opacity: 1;
+  transform: translateX(0);
+  transition:
+    opacity var(--anim-block-duration, 500ms) ease-out,
+    transform var(--anim-block-duration, 500ms) ease-out;
+}
+
+.entrance-block-right {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.entrance-block-right.entrance-visible {
+  opacity: 1;
+  transform: translateX(0);
+  transition:
+    opacity var(--anim-block-duration, 500ms) ease-out,
+    transform var(--anim-block-duration, 500ms) ease-out;
+}
+
+/* Word-by-word text reveal */
+.entrance-word {
+  opacity: 0;
+}
+
+.entrance-word.entrance-visible {
+  opacity: 1;
+  transition: opacity var(--anim-word-duration, 150ms) ease-out;
+}
+
+/* CTA buttons — slide up after text completes */
+.entrance-cta {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.entrance-cta.entrance-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 200ms ease-out,
+    transform 200ms ease-out;
+}
+
+/* ── prefers-reduced-motion ────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .entrance-ready   { opacity: 1; transform: none; }
+  .entrance-visible { transition: none; }
+
+  .entrance-card,
+  .entrance-heading,
+  .entrance-chip,
+  .entrance-block-left,
+  .entrance-block-right {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .entrance-word {
+    opacity: 1;
+    transition: none;
+  }
+
+  .entrance-cta {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ============================================================
    Base styles
    ============================================================ */
 

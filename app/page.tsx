@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { ClayCard } from "@/components/ui/ClayCard";
 import { Button } from "@/components/ui/Button";
 import { SearchBar } from "@/components/ui/SearchBar";
 import { HeroIllustration as HeroSVG } from "@/components/HeroIllustration";
-import { ArchiveMotif } from "@/components/illustrations/ArchiveMotif";
-import { StandardIcon } from "@/components/ui/StandardIcon";
-import { standards, topics, SITE_URL } from "@/lib/standards";
 import { HeroTitle, HeroDescription, HeroSearchWrapper, HeroIllustration as HeroFloat } from "@/components/home/HeroAnimated";
-import { PriorityGrid, PriorityGridItem } from "@/components/home/PriorityGrid";
+import { PriorityStandardsSection } from "@/components/home/PriorityStandardsSection";
+import { BrowseByTopicSection } from "@/components/home/BrowseByTopicSection";
+import AnimatedPositioningBlock from "@/components/home/AnimatedPositioningBlock";
+import { standards, topics, SITE_URL } from "@/lib/standards";
 
 export const metadata: Metadata = {
 	title: "The NFRS Archive",
@@ -103,98 +102,14 @@ export default function HomePage() {
 			</section>
 
 			{/* === PRIORITY STANDARDS === */}
-			<section className="max-w-[1280px] mx-auto px-5 md:px-8 lg:px-12 py-16 md:py-20">
-				<div className="flex items-baseline justify-between mb-8">
-					<div>
-						<Eyebrow className="mb-2">Cross-referencing the pillars</Eyebrow>
-						<h2 className="font-display text-3xl font-light">
-							Priority Standards
-						</h2>
-					</div>
-					<Link
-						href="/standards"
-						className="font-sans text-sm text-accent hover:text-accent-hover hidden sm:inline"
-					>
-						View all &rarr;
-					</Link>
-				</div>
-				<PriorityGrid className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-					{priorityStandards.map((s) => {
-						if (!s) return null;
-						return (
-							<PriorityGridItem key={s.slug}>
-								<Link href={`/standards/${s.slug}`}>
-									<ClayCard hover padding="md" className="h-full">
-										{s.heroMotif && (
-											<div className="mb-3">
-												<StandardIcon motif={s.heroMotif} />
-											</div>
-										)}
-										<h3 className="font-display text-lg font-normal">
-											{s.nfrsNumber}
-										</h3>
-										<p className="font-serif text-sm text-text-muted mt-1 leading-snug">
-											{s.title}
-										</p>
-									</ClayCard>
-								</Link>
-							</PriorityGridItem>
-						);
-					})}
-				</PriorityGrid>
-			</section>
+			<PriorityStandardsSection standards={priorityStandards} />
 
 			{/* === BROWSE BY TOPIC === */}
-			<section className="max-w-[1280px] mx-auto px-5 md:px-8 lg:px-12 py-12 md:py-16">
-				<h2 className="font-display text-2xl font-light mb-6">
-					Browse by topic
-				</h2>
-				<div className="flex flex-wrap gap-2.5">
-					{topics.map((t) => (
-						<Link
-							key={t.slug}
-							href={`/topics/${t.slug}`}
-							className="font-sans text-sm px-4 py-2 rounded-pill border border-border bg-bg-elevated hover:border-accent hover:bg-accent hover:text-accent-fg transition-all duration-150"
-						>
-							{t.label}
-						</Link>
-					))}
-				</div>
-			</section>
+			<BrowseByTopicSection topics={topics} />
 
 			{/* === POSITIONING BLOCK === */}
 			<section className="max-w-[1280px] mx-auto px-5 md:px-8 lg:px-12 py-16 md:py-20">
-				<div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
-					<div className="md:col-span-5">
-						<ArchiveMotif className="text-accent w-full h-auto" />
-					</div>
-					<div className="md:col-span-7">
-						<h2 className="font-display text-[clamp(28px,6vw,48px)] leading-[1.1] font-light mb-6">
-							Beyond the
-							<br />
-							<em className="italic text-accent">static spreadsheet.</em>
-						</h2>
-						<p className="font-serif text-base text-text-muted leading-relaxed mb-4 max-w-lg">
-							Nepali auditors, CA students, and in-house accountants currently
-							cross-reference scattered PDFs to understand how NFRS departs from
-							IFRS. This site replaces that workflow with a single, searchable,
-							always-up-to-date reference.
-						</p>
-						<p className="font-serif text-base text-text-muted leading-relaxed mb-8 max-w-lg">
-							Every standard is explained in original commentary, never
-							reproduced text. Paragraph citations let you verify every claim
-							against the authoritative source.
-						</p>
-						<div className="flex flex-wrap gap-4">
-							<Button variant="primary" href="/carve-outs">
-								See all carve-outs
-							</Button>
-							<Button variant="link" href="/about">
-								Our methodology
-							</Button>
-						</div>
-					</div>
-				</div>
+				<AnimatedPositioningBlock />
 			</section>
 		</>
 	);

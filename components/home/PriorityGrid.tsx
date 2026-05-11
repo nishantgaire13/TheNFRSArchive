@@ -1,17 +1,7 @@
 "use client";
 
-import { type ReactNode } from "react";
-import { motion } from "framer-motion";
-
-const container = {
-	hidden: {},
-	visible: { transition: { staggerChildren: 0.08 } },
-};
-
-const item = {
-	hidden: { opacity: 0, y: 30 },
-	visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" as const } },
-};
+import { type ReactNode, useRef } from "react";
+import { useEntranceAnimation } from "./useEntranceAnimation";
 
 export function PriorityGrid({
 	children,
@@ -20,30 +10,39 @@ export function PriorityGrid({
 	children: ReactNode;
 	className?: string;
 }) {
+	const ref = useRef<HTMLDivElement>(null);
+	useEntranceAnimation(ref, 0.1);
+
 	return (
-		<motion.div
-			variants={container}
-			initial="hidden"
-			whileInView="visible"
-			viewport={{ once: true, margin: "-60px" }}
+		<div
+			ref={ref}
 			className={className}
+			data-entrance="container"
 		>
 			{children}
-		</motion.div>
+		</div>
 	);
 }
 
 export function PriorityGridItem({
 	children,
+	index,
 }: {
 	children: ReactNode;
+	index: number;
 }) {
+	const delay = 80 * index;
 	return (
-		<motion.div
-			variants={item}
-			whileHover={{ y: -3, transition: { duration: 0.2 } }}
+		<div
+			className="entrance-card"
+			data-entrance="card"
+			style={
+				{
+					"--anim-card-stagger": `${delay}ms`,
+				} as React.CSSProperties
+			}
 		>
 			{children}
-		</motion.div>
+		</div>
 	);
 }
